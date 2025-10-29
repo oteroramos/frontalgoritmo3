@@ -1,0 +1,19 @@
+mat-card{
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+mat-toolbar{
+    background-color: rgba(223, 102, 3, 0.781);
+    color: #110606;
+}
+
+.nav-tool-items {
+  display: flex;
+  gap: 1rem;  
+}

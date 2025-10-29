@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Productos</h2>
+
+  <section id="inicio" class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20">
+    <div class="max-w-5xl mx-auto text-center px-4">
+      <h2 class="text-4xl font-extrabold mb-4">Controlá tu inventario de forma fácil y rápida</h2>
+      <p class="text-lg mb-6">
+        Un sistema pensado para kioskos, que te ayuda a llevar el control de stock de todos tus productos sin complicaciones.
+      </p>
+    </div>
+  </section>
+
+  <br><br>
+
+<div class="cards-products">
+  <mat-card class="example-card" *ngFor="let p of products">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ p.name }}</mat-card-title>
+        <mat-card-subtitle>
+          Precio: {{ p.price | currency:'ARS' }} <br>
+          Stock: {{ p.stock }}
+        </mat-card-subtitle>
+        <img mat-card-image [src]="p.img" alt="{{p.name}}">
+      </mat-card-title-group>
+    </mat-card-header>
+
+  <br><br>
+
+<mat-card-content>
+  <div class="cantidad-stepper">
+    <button mat-mini-fab color="primary" (click)="decrementar(p)" [disabled]="p.amount <= 0">
+      <mat-icon>remove</mat-icon>
+    </button>
+
+    <span class="cantidad">{{ p.amount || 0 }}</span>
+
+    <button mat-mini-fab color="primary" (click)="incrementar(p)" [disabled]="p.amount >= p.stock">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</mat-card-content>
+
+    <mat-card-actions>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        (click)="comprar(p)"
+        [disabled]="!p.amount || p.amount > p.stock">
+        Agregar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

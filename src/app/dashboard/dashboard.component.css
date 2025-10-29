@@ -1,0 +1,50 @@
+mat-toolbar{
+    background-color: rgba(223, 102, 3, 0.781);
+    color: #110606;
+}
+
+mat-sidenav {
+    width: 200px;
+    border-right: none;
+    padding: 16px 0;
+}
+
+
+mat-sidenav-container {
+    height: calc(100svh - 65px);
+}
+
+.content {
+    height: calc(100svh - 98px);
+    border-radius: 10px;
+    padding: 16px;
+    max-width: 1520px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+
+.carrito {
+  flex: 1 1 auto;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    height: calc(100% - 40px);
+}
+
+.example-card {
+  max-width: 400px;
+  cursor:pointer
+}
+
+.example-card-footer {
+  padding: 16px;
+}
+
+.cards-products{
+  display: flex;
+  justify-content: space-between;
+
+}

@@ -1,0 +1,122 @@
+/* ==== Toolbar principal ==== */
+mat-toolbar {
+  background-color: rgba(223, 102, 3, 0.781);
+  color: #110606;
+  font-weight: 500;
+}
+
+/* ==== Sidenav ==== */
+mat-sidenav {
+  width: 260px; /* 🔹 más ancho para nombres largos */
+  border-right: none;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+/* ==== Contenedor principal ==== */
+mat-sidenav-container {
+  height: calc(100svh - 65px);
+}
+
+/* ==== Contenido central ==== */
+.content {
+  height: calc(100svh - 98px);
+  border-radius: 10px;
+  padding: 16px;
+  max-width: 1520px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+/* ==== Espaciador toolbar ==== */
+.carrito {
+  flex: 1 1 auto;
+}
+
+/* ==== Contenedor general ==== */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  height: calc(100% - 40px);
+}
+
+/* ==== Tarjetas de productos ==== */
+.example-card {
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.example-card-footer {
+  padding: 16px;
+}
+
+.cards-products {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ==== Ítems generales del menú lateral ==== */
+mat-nav-list a[mat-list-item] {
+  color: #333;
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 2px 16px; /* 🔹 margen uniforme */
+  padding: 10px 16px; /* 🔹 más espacio para legibilidad */
+  font-size: 15px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+mat-nav-list a[mat-list-item]:hover {
+  background-color: rgba(223, 102, 3, 0.1);
+  color: #000;
+}
+
+/* ==== Íconos ==== */
+mat-icon[matListItemIcon],
+mat-icon {
+  margin-right: 12px;
+  color: rgba(24, 24, 24, 0.9);
+}
+
+/* ==== Expansion panel (Productos) ==== */
+mat-expansion-panel {
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+  margin: 2px 16px !important; /* 🔹 igual margen que los links */
+}
+
+/* Cabecera del panel = alineada con el resto */
+mat-expansion-panel-header {
+  padding: 10px 16px !important;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+mat-expansion-panel-header:hover {
+  background-color: rgba(223, 102, 3, 0.1);
+}
+
+mat-expansion-panel-header mat-icon {
+  color: rgba(24, 24, 24, 0.9);
+  margin-right: 8px;
+}
+
+/* ==== Submenú interno ==== */
+mat-action-list {
+  background: transparent !important;
+  padding: 0 !important;
+  margin-left: 32px; /* 🔹 indentado limpio para los subitems */
+}
+
+mat-action-list a[mat-list-item] {
+  padding: 6px 12px !important;
+  margin: 2px 0 !important;
+  border-radius: 6px;
+  font-weight: 400;
+}
+
+mat-action-list a[mat-list-item]:hover {
+  background-color: rgba(223, 102, 3, 0.08);
+  color: #000;
+}

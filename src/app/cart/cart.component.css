@@ -1,0 +1,28 @@
+.cart-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: block;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  border-radius: 6px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
