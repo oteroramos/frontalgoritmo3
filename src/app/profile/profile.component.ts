@@ -12,6 +12,10 @@ export class ProfileComponent {
   @Input() nombre: string = 'María';
   @Input() apellido: string = 'Pérez';
   @Input() edad: number = 28;
+  @Input() dni: number = 12345678;
+  @Input() fechaNacimiento: string = "12 de diciembre de 1998";
+  @Input() direccion: string = "calle falsa 123";
+  @Input() email: string = "prueba123@gmail.com";
 
   get iniciales(): string {
     const n = this.nombre ? this.nombre.charAt(0) : '';
