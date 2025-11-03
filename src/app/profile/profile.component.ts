@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
   standalone: true, // ✅ indica que es un componente standalone
-imports: [UpperCasePipe], // ✅ agregás el pipe a los imports
+//imports: [UpperCasePipe], // ✅ agregás el pipe a los imports
 })
 export class ProfileComponent {
   @Input() nombre: string = 'María';
