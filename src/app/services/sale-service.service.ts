@@ -7,7 +7,7 @@ import { CashResponse } from './cash.service';
   providedIn: 'root'
 })
 export class SaleServiceService {
-  //private baseUrl = 'https://backalgoritmos.onrender.com/api/sale';
+  //private baseUrl = 'http://localhost:8080/api/sale';
   private baseUrl = 'https://backalgoritmo.onrender.com/api/sale';
 
 
