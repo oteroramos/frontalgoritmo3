@@ -1,0 +1,37 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff3e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #fb8c00;
+  margin-bottom: 25px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  width: 50%;
+  font-weight: bold;
+}
+
+mat-form-field {
+  transition: transform 0.2s;
+}
+
+mat-form-field:hover {
+  transform: scale(1.02);
+}

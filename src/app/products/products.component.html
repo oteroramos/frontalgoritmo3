@@ -29,13 +29,20 @@
 
 <mat-card-content>
   <div class="cantidad-stepper">
-    <button mat-mini-fab color="primary" (click)="decrementar(p)" [disabled]="p.amount <= 0">
+    <button mat-mini-fab 
+        (click)="decrementar(p)" 
+        [disabled]="p.amount <= 0"
+        [style.background-color]="'orange'"
+        style="color: white;">
+
+
       <mat-icon>remove</mat-icon>
     </button>
 
     <span class="cantidad">{{ p.amount || 0 }}</span>
 
-    <button mat-mini-fab color="primary" (click)="incrementar(p)" [disabled]="p.amount >= p.stock">
+    <button mat-mini-fab  [style.background-color]="'orange'"
+        style="color: white;" (click)="incrementar(p)" [disabled]="p.amount >= p.stock">
       <mat-icon>add</mat-icon>
     </button>
   </div>
@@ -44,7 +51,8 @@
     <mat-card-actions>
       <button 
         mat-raised-button 
-        color="primary" 
+         [style.background-color]="'orange'"
+        style="color: white;"
         (click)="comprar(p)"
         [disabled]="!p.amount || p.amount > p.stock">
         Agregar

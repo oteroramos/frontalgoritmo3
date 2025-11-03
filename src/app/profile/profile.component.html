@@ -1,1 +1,14 @@
-<p>profile works!</p>
+<div class="perfil-card">
+  <div class="perfil-left">
+    <div class="avatar" aria-hidden="true">{{ iniciales }}</div>
+
+  </div>
+  <div class="perfil-right">
+    <h2 class="nombre">
+      {{ nombre }} <span class="apellido">{{ apellido }}</span>
+    </h2>
+    <p class="edad">Edad: <strong>{{ edad }}</strong></p>
+    <p>mi nombre es {{nombre | uppercase}}</p>
+  </div>
+</div>
+
