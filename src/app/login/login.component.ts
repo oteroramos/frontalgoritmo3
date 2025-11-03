@@ -42,8 +42,18 @@ export class LoginComponent {
 login() {
   this.loginService.login(this.user).subscribe({
     next: (response) => {
-      this.loginService.setUser(response);
-      this.router.navigate(['/dashboard']);
+      try {
+         if (response.email) {
+          this.loginService.setUser(response);
+          this.router.navigate(['/dashboard']);
+        }else {
+          this.loginValid = false;
+        }
+       
+      } catch (error) {
+        this.loginValid = false;
+      }
+      
     },
     error: () => {
       this.loginValid = false;
