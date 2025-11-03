@@ -19,7 +19,7 @@ export interface CashResponse extends CashRequest {}
 export class CashService {
   //esto es para cambiar el host (la nube/desployado)
   //private apiUrl = 'https://backalgoritmos.onrender.com/api/cash';
-  private apiUrl = 'http://localhost:8080/api/cash';
+  private apiUrl = 'https://backalgoritmo.onrender.com/api/cash';
 
   constructor(private http: HttpClient) {}
 
