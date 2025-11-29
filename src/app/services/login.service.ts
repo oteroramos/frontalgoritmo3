@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  //private apiUrl = 'http://localhost:8080/api/auth/login';
-  private apiUrl = 'https://backalgoritmo.onrender.com/api/auth/login';
+  private apiUrl = 'http://localhost:8080/api/auth/login';
+  //private apiUrl = 'https://backalgoritmo.onrender.com/api/auth/login';
 
   private loggedIn = new BehaviorSubject<boolean>(this.hasUser());
   public loggedIn$ = this.loggedIn.asObservable();

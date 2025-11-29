@@ -11,6 +11,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { AuthLayoutComponentComponent } from './auth-layout-component/auth-layout-component.component';
 import { MainLayoutComponentComponent } from './main-layout-component/main-layout-component.component';
 import { CartComponent } from './cart/cart.component';
+import { RegisterComponent } from './register/register.component';
 
 
 export const routes: Routes = [
@@ -22,6 +23,7 @@ export const routes: Routes = [
       { path: '', component: LoginComponent }
     ]
   },
+     {path : 'register', component: RegisterComponent },
 
   {
     path: '',
@@ -35,10 +37,10 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'about', component: AboutComponent },
       { path: 'products/add', component: AddproductComponent },
-      { path: 'cart', component: CartComponent }
-    ]
+      { path: 'cart', component: CartComponent },
+      ]
   },
-
+ 
   
   { path: '**', component: NotFoundComponentComponent }
 ];

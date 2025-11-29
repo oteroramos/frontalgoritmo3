@@ -2,8 +2,11 @@
 <mat-toolbar> <button mat-icon-button (click)="sidenav.toggle()"> <mat-icon>{{ sidenav?.opened ? 'close' : 'menu' }}
 
 </mat-icon> </button> Inventario <span class="carrito"></span> <!-- Carrito alineado a la derecha --> 
-<button mat-icon-button aria-label="Carrito" routerLink="/cart"> 
-  <mat-icon>shopping_cart</mat-icon> </button> 
+<button mat-icon-button aria-label="Carrito" routerLink="/cart" class="cart-btn">
+  <mat-icon>shopping_cart</mat-icon>
+  <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
+</button>
+
   <button mat-button (click)="logout()"><mat-icon>logout</mat-icon> Salir </button>
 </mat-toolbar>
 
@@ -51,7 +54,7 @@
 
         <a mat-list-item (click)="sidenav.mode=='over' && sidenav.toggle()" routerLink="/about">
           <mat-icon matListItemIcon>info</mat-icon>
-          Sobre nosotros
+         ¡Como comprar!
         </a>
       </mat-nav-list>
 

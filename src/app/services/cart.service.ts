@@ -1,20 +1,30 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Product } from '../model/product.model'; // Ajustá según tu modelo
+import { Product } from '../model/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class CartService {
+
+  private storageKey = 'cart_items';
   private items: Product[] = [];
-  private itemsSubject = new BehaviorSubject<Product[]>([]);
 
-  items$ = this.itemsSubject.asObservable();
+  constructor() {
+    this.items = this.loadFromStorage();
+  }
 
-  constructor() {}
+  /** 🔹 Cargar carrito desde localStorage */
+  private loadFromStorage(): Product[] {
+    const data = localStorage.getItem(this.storageKey);
+    return data ? JSON.parse(data) : [];
+  }
 
-  // Agregar producto al carrito
+  /** 🔹 Guardar carrito */
+  private saveToStorage(): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.items));
+  }
+
+  /** 🛒 Agregar producto */
   addToCart(product: Product): void {
     const existing = this.items.find(p => p.id === product.id);
     if (existing) {
@@ -22,27 +32,36 @@ export class CartService {
     } else {
       this.items.push({ ...product, quantity: 1 });
     }
-    this.itemsSubject.next(this.items);
+   
+    console.log('Carrito actual:', this.items); 
+    this.saveToStorage();
   }
 
-  // Eliminar producto
-  removeFromCart(productId: number): void {
-    this.items = this.items.filter(p => p.id !== productId);
-    this.itemsSubject.next(this.items);
+  /** ❌ Eliminar producto */
+  removeFromCart(id: number): void {
+    this.items = this.items.filter(item => item.id !== id);
+    this.saveToStorage();
   }
 
-  // Vaciar carrito
+  /** 🧹 Vaciar carrito */
   clearCart(): void {
     this.items = [];
-    this.itemsSubject.next(this.items);
+    this.saveToStorage();
   }
 
-  // Obtener el total
+  /** 💰 Total */
   getTotal(): number {
-    return this.items.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+   let total = 0;
+
+  for (let item of this.items) {
+    const amount = item.amount || 0;  // por si es undefined
+    total += item.price * amount;
   }
 
-  // Obtener copia actual
+  return total;
+  }
+
+  /** 📦 Obtener items */
   getItems(): Product[] {
     return [...this.items];
   }

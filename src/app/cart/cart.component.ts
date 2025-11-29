@@ -35,19 +35,27 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Suscripción para mantener el carrito actualizado
-    this.cartService.items$.subscribe(items => {
-      this.items = items;
-      this.total = this.cartService.getTotal();
-    });
+    // Cargar carrito desde el storage apenas carga la pantalla
+    this.refreshCart();
+
   }
 
+ /* * 🔄 Refrescar vista */
+  private refreshCart(): void {
+    this.items = this.cartService.getItems();
+    this.total = this.cartService.getTotal();
+  }
+
+  /** ❌ Eliminar un item */
   removeItem(id: number): void {
     this.cartService.removeFromCart(id);
+    this.refreshCart();
   }
 
+  /** 🧹 Vaciar carrito */
   clearCart(): void {
     this.cartService.clearCart();
+    this.refreshCart();
   }
 
   /** ✅ Envía la compra al backend */

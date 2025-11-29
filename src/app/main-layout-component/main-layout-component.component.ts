@@ -41,6 +41,10 @@ export class MainLayoutComponentComponent implements OnInit {
       private router: Router
     ) {}
   
+    cartCount: number = 0;
+    count: string | null = null;
+    items: any[] = [];  
+
     ngOnInit(): void {
       // Observar cambios de tamaño para el sidenav
       this.observer.observe(['(max-width: 800px)']).subscribe(res => {
@@ -52,7 +56,12 @@ export class MainLayoutComponentComponent implements OnInit {
           this.sidenav.open();
         }
       });
+       this.count= localStorage.getItem('cart_items');
+       this.items = this.count ? JSON.parse(this.count) : [];
+
+      this.cartCount = this.items.length;
     }
+   
 
     logout(): void {
     this.loginService.logout();

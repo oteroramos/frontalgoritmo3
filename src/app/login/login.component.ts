@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Router } from '@angular/router';
 import { MatToolbar } from '@angular/material/toolbar';
 import { LoginService } from '../services/login.service';
+import { RouterModule } from '@angular/router';
+
 
 
 @Component({
@@ -22,7 +24,8 @@ import { LoginService } from '../services/login.service';
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,
-    MatToolbar
+    MatToolbar,
+    RouterModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

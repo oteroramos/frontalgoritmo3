@@ -1,0 +1,49 @@
+mat-card{
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+mat-toolbar{
+    background-color: rgba(223, 102, 3, 0.781);
+    color: #110606;
+}
+
+.nav-tool-items {
+  display: flex;
+  gap: 1rem;  
+}
+
+.app-header {
+  background-color: #f28a1a !important;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-tool-items {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+
+.link-btn {
+  color: white !important;
+  font-weight: 500;
+  text-transform: none;
+}
+
+
+.raised-btn {
+  background-color: white !important;
+  color: #333 !important;
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 8px;
+  padding: 4px 18px;
+}
