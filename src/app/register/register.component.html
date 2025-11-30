@@ -1,12 +1,17 @@
 <mat-toolbar color="primary" class="app-header">
   <span class="nav-tool-items">
-    <a mat-button routerLink="/login" class="link-btn">Log in</a>
 
-    <a mat-raised-button color="accent" routerLink="/register" class="raised-btn">
+    <a mat-button routerLink="/login" class="nav-btn nav-btn-login">
+      Log in
+    </a>
+
+    <a mat-button routerLink="/register" class="nav-btn nav-btn-register">
       Register
     </a>
+
   </span>
 </mat-toolbar>
+
 <mat-card class="register-card">
 
   <h2 class="title">Registro</h2>
@@ -84,7 +89,7 @@
       </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="full-width" type="submit"
+    <button mat-raised-button color="primary" class="btn-register" type="submit"
       [disabled]="registerForm.invalid">
       Registrarme
     </button>

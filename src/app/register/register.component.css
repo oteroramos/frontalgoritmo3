@@ -1,21 +1,21 @@
-mat-card{
-    max-width: 400px;
-    margin: 2em auto;
-    text-align: center;
+.register-card {
+  max-width: 420px;
+  margin: 3em auto;
+  padding: 2em;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-mat-form-field {
-    display: block;
+.full-width {
+  width: 100%;
 }
 
-mat-toolbar{
-    background-color: rgba(223, 102, 3, 0.781);
-    color: #110606;
-}
-
-.nav-tool-items {
-  display: flex;
-  gap: 1rem;  
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5em;
+  font-weight: 600;
+  color: #333;
 }
 
 .app-header {
@@ -23,27 +23,66 @@ mat-toolbar{
   color: white;
   display: flex;
   justify-content: flex-start;
+  padding: 0 20px;
+  height: 64px;
+  align-items: center;
 }
 
 .nav-tool-items {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 }
 
-
-.link-btn {
-  color: white !important;
-  font-weight: 500;
-  text-transform: none;
-}
-
-
-.raised-btn {
-  background-color: white !important;
-  color: #333 !important;
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
   font-weight: 600;
   text-transform: none;
+  transition: all 0.25s ease;
+  font-size: 15px;
+}
+
+.nav-btn-login {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.nav-btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.32);
+  border-color: white;
+}
+
+.nav-btn-register {
+  background-color: white !important;
+  color: #f28a1a !important;
   border-radius: 8px;
-  padding: 4px 18px;
+  font-weight: 600;
+}
+
+.nav-btn-register:hover {
+  background-color: #ffe4c2 !important;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #f28a1a !important;
+  color: white !important;
+  font-size: 17px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: 0.25s ease;
+}
+
+.btn-register:hover {
+  background-color: #d97706 !important;
+  transform: translateY(-1px);
+}
+
+mat-form-field {
+  margin-bottom: 12px;
 }

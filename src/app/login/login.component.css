@@ -1,19 +1,72 @@
-mat-card{
-    max-width: 400px;
-    margin: 2em auto;
-    text-align: center;
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 mat-form-field {
-    display: block;
+  display: block;
+  width: 100%;
 }
 
-mat-toolbar{
-    background-color: rgba(223, 102, 3, 0.781);
-    color: #110606;
+mat-toolbar {
+  background: linear-gradient(45deg, #f28a1a, #df6603);
+  color: white;
+  padding: 8px 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .nav-tool-items {
   display: flex;
-  gap: 1rem;  
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.nav-btn {
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  text-transform: none;
+}
+
+.nav-btn-login {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.nav-btn-login:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.nav-btn-register {
+  background: white;
+  color: #df6603;
+  border: 1px solid white;
+}
+
+.nav-btn-register:hover {
+  background: #ffe0c2;
+  transform: translateY(-2px);
+}
+
+button[mat-raised-button] {
+  margin-top: 20px;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.25s ease;
+}
+
+button[mat-raised-button]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
