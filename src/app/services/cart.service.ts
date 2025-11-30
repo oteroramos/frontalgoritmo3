@@ -1,30 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
+    private apiUrl = 'http://localhost:8080/api/sale';
+  //private apiUrl = 'https://backalgoritmo.onrender.com/api/sale/all';
+
   private storageKey = 'cart_items';
   private items: Product[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.items = this.loadFromStorage();
   }
 
-  /** 🔹 Cargar carrito desde localStorage */
+ 
   private loadFromStorage(): Product[] {
     const data = localStorage.getItem(this.storageKey);
     return data ? JSON.parse(data) : [];
   }
 
-  /** 🔹 Guardar carrito */
+
   private saveToStorage(): void {
     localStorage.setItem(this.storageKey, JSON.stringify(this.items));
   }
 
-  /** 🛒 Agregar producto */
+
   addToCart(product: Product): void {
     const existing = this.items.find(p => p.id === product.id);
     if (existing) {
@@ -37,19 +41,18 @@ export class CartService {
     this.saveToStorage();
   }
 
-  /** ❌ Eliminar producto */
+
   removeFromCart(id: number): void {
     this.items = this.items.filter(item => item.id !== id);
     this.saveToStorage();
   }
 
-  /** 🧹 Vaciar carrito */
+ 
   clearCart(): void {
     this.items = [];
     this.saveToStorage();
   }
 
-  /** 💰 Total */
   getTotal(): number {
    let total = 0;
 
@@ -61,8 +64,12 @@ export class CartService {
   return total;
   }
 
-  /** 📦 Obtener items */
+
   getItems(): Product[] {
     return [...this.items];
+  }
+
+  abonar(request: any){
+    return this.http.post(this.apiUrl + '/save',request)
   }
 }

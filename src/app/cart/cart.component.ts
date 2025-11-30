@@ -40,31 +40,32 @@ export class CartComponent implements OnInit {
 
   }
 
- /* * 🔄 Refrescar vista */
   private refreshCart(): void {
     this.items = this.cartService.getItems();
     this.total = this.cartService.getTotal();
   }
 
-  /** ❌ Eliminar un item */
   removeItem(id: number): void {
     this.cartService.removeFromCart(id);
     this.refreshCart();
   }
 
-  /** 🧹 Vaciar carrito */
+
   clearCart(): void {
     this.cartService.clearCart();
     this.refreshCart();
   }
 
-  /** ✅ Envía la compra al backend */
+
   abonar(): void {
     if (!this.items.length) return;
-
     // En lugar de mandar cada producto por separado,
     // generamos una sola venta con todos los productos
     const request = {
+      saleItemRequestList: this.items,
+      date: new Date(),
+      total: this.cartService.getTotal()
     }
+    this.cartService.abonar(request).subscribe();
   }
 }

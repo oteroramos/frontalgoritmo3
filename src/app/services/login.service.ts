@@ -16,36 +16,30 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  // 🔹 Llamada al backend
   login(user: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, user);
   }
 
-  // 🔹 Guarda usuario en sessionStorage (se borra al cerrar el navegador)
   setUser(user: any): void {
     sessionStorage.setItem('user', JSON.stringify(user));
     this.loggedIn.next(true);
   }
 
-  // 🔹 Recupera usuario
   getUser(): any {
     const user = sessionStorage.getItem('user');
     return user ? JSON.parse(user) : null;
   }
 
-  // 🔹 Valida si hay usuario logueado
   isAuthenticated(): boolean {
     return !!sessionStorage.getItem('user');
   }
 
-  // 🔹 Cierra sesión
   logout(): void {
     sessionStorage.removeItem('user');
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
   }
 
-  // 🔹 Método interno para inicializar BehaviorSubject
   private hasUser(): boolean {
     return this.getUser() !== null;
   }
