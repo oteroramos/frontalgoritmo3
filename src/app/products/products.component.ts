@@ -42,20 +42,20 @@ products: Product[] = [];
   }
 
   incrementar(p: Product) {
-    if (!p.amount) p.amount = 0; // valor inicial
-    if (p.amount < p.stock) {
-      p.amount++;
+    if (!p.quantity) p.quantity = 0; // valor inicial
+    if (p.quantity < p.stock) {
+      p.quantity++;
     }
   }
 
   decrementar(p: Product) {
-    if (p.amount > 0) {
-      p.amount--;
+    if (p.quantity > 0) {
+      p.quantity--;
     }
   }
 
   comprar(producto: Product) {
-    if (!producto.amount || producto.amount <= 0) {
+    if (!producto.quantity || producto.quantity <= 0) {
       console.warn('Debe seleccionar una cantidad válida.');
       return;
     }

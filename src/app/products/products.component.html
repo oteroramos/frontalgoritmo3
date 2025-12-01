@@ -25,20 +25,20 @@
 
       <mat-card-content class="flex justify-between items-center mt-4">
         <div class="cantidad-stepper flex items-center gap-2">
-          <button mat-mini-fab (click)="decrementar(p)" [disabled]="p.amount <= 0" class="bg-orange-500 text-white hover:bg-orange-600">
+          <button mat-mini-fab (click)="decrementar(p)" [disabled]="p.quantity <= 0" class="bg-orange-500 text-white hover:bg-orange-600">
             <mat-icon>remove</mat-icon>
           </button>
 
-          <span class="cantidad font-bold text-lg">{{ p.amount || 0 }}</span>
+          <span class="cantidad font-bold text-lg">{{ p.quantity || 0 }}</span>
 
-          <button mat-mini-fab (click)="incrementar(p)" [disabled]="p.amount >= p.stock" class="bg-orange-500 text-white hover:bg-orange-600">
+          <button mat-mini-fab (click)="incrementar(p)" [disabled]="p.quantity >= p.stock" class="bg-orange-500 text-white hover:bg-orange-600">
             <mat-icon>add</mat-icon>
           </button>
         </div>
       </mat-card-content>
 
       <mat-card-actions class="mt-4">
-        <button mat-raised-button (click)="comprar(p)" [disabled]="!p.amount || p.amount > p.stock" class="w-full bg-orange-500 text-white hover:bg-orange-600 font-semibold">
+        <button mat-raised-button (click)="comprar(p)" [disabled]="!p.quantity || p.quantity > p.stock" class="w-full bg-orange-500 text-white hover:bg-orange-600 font-semibold">
           Agregar al carrito
         </button>
       </mat-card-actions>

@@ -33,7 +33,8 @@ export class CartService {
     const existing = this.items.find(p => p.id === product.id);
     if (existing) {
       console.log('Producto ya en el carrito, aumentando cantidad ', existing);
-      existing.quantity! += 1;
+      console.log("Producto del parametro:", product);  
+      existing.quantity! += product.quantity!;
 
     } else {
       this.items.push({ ...product, quantity: 1 });
