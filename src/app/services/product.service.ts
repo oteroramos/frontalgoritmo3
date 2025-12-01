@@ -8,8 +8,8 @@ import { Product } from '../model/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-    private apiUrl = 'http://localhost:8080/api/products/';
-    //private apiUrl = 'https://backalgoritmo.onrender.com/api/products/';
+    //private apiUrl = 'http://localhost:8080/api/products/';
+    private apiUrl = 'https://backalgoritmo.onrender.com/api/products/';
     
   private products: Product[] = [];
   private products$ = new BehaviorSubject<Product[]>([]);

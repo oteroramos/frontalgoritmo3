@@ -27,7 +27,7 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
   items: Product[] = [];
   total = 0;
-  displayedColumns = ['name', 'price', 'amount', 'subtotal', 'actions'];
+  displayedColumns = ['name', 'price', 'quantity', 'subtotal', 'actions'];
 
   constructor(
     private cartService: CartService,

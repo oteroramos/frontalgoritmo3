@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-    private apiUrl = 'http://localhost:8080/api/sale';
-  //private apiUrl = 'https://backalgoritmo.onrender.com/api/sale/all';
+    //private apiUrl = 'http://localhost:8080/api/sale';
+    private apiUrl = 'https://backalgoritmo.onrender.com/api/sale';
 
   private storageKey = 'cart_items';
   private items: Product[] = [];
@@ -32,7 +32,9 @@ export class CartService {
   addToCart(product: Product): void {
     const existing = this.items.find(p => p.id === product.id);
     if (existing) {
-      existing.quantity = (existing.quantity || 1) + 1;
+      console.log('Producto ya en el carrito, aumentando cantidad ', existing);
+      existing.quantity! += 1;
+
     } else {
       this.items.push({ ...product, quantity: 1 });
     }
@@ -57,8 +59,8 @@ export class CartService {
    let total = 0;
 
   for (let item of this.items) {
-    const amount = item.amount || 0;  // por si es undefined
-    total += item.price * amount;
+    const quantity = item.quantity || 0;  // por si es undefined
+    total += item.price * quantity;
   }
 
   return total;
