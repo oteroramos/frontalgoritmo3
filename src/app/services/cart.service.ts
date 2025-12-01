@@ -41,6 +41,7 @@ export class CartService {
     }
    
     console.log('Carrito actual:', this.items); 
+    
     this.saveToStorage();
   }
 
