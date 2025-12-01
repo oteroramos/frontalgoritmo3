@@ -37,7 +37,7 @@ export class CartService {
       existing.quantity! += product.quantity!;
 
     } else {
-      this.items.push({ ...product, quantity: 1 });
+      this.items.push({ ...product, quantity: product.quantity   });
     }
    
     console.log('Carrito actual:', this.items); 
