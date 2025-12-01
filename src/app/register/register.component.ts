@@ -45,6 +45,7 @@ export class RegisterComponent {
     const pass = form.get('password')?.value;
     const rep = form.get('repeatPassword')?.value;
     return pass === rep ? null : { passwordsNoCoinciden: true };
+    
   }
 
   registrar() {
